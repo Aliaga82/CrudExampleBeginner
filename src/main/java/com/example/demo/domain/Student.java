@@ -1,27 +1,18 @@
 package com.example.demo.domain;
 
+import com.example.demo.controller.AbstractEntity;
+
 import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table(name = "t_student")
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    private long id;
+public class Student extends AbstractEntity {
+
     private String name;
     private String  surname;
     private int age;
     private Date dob;
     private String classRoom;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
